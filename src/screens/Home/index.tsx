@@ -22,12 +22,19 @@ export default function Home() {
       setParticipantName('')
       }
 
+      function removeAlert(name: string){
+
+        Alert.alert(`${name} Deletado!`)
+        setParticipants(prevState => prevState.filter(participant => participant !== name))
+      }
+
     function handleParticipantRemove(name : string) {
 
       Alert.alert("Remover", `Remover o participante ${name} ?`, [
         {
           text:"Sim",
-          onPress: () => Alert.alert("Deletado")
+          onPress: () => removeAlert(name) 
+          
         },
         {
           text:"Nao",
