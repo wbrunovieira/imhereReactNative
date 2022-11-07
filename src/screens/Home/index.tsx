@@ -22,7 +22,7 @@ export default function Home() {
       setParticipantName('')
       }
 
-      function removeAlert(name: string){
+    function removeAlert(name: string){
 
         Alert.alert(`${name} Deletado!`)
         setParticipants(prevState => prevState.filter(participant => participant !== name))
